@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "arknightscraft",
+  "version": "1.0.0",
+
+  "name": "ArknightsCraft",
+  "description": "We are ARKNIGHTS",
+  "authors": [
+    "Baka632"
+  ],
+  "contact": {
+    "homepage": "",
+    "sources": ""
+  },
+
+  "license": "MIT",
+  "icon": "assets/modid/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.baka632.arknightscraft.ArknightsCraft"
+    ]
+  },
+  "mixins": [
+    "arknightscraft.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.11.3",
+    "fabric": "*",
+    "minecraft": "1.16.x",
+    "java": ">=16"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}
