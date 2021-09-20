@@ -1,5 +1,9 @@
 {
+    "advancements.arknightscraft.root.title" : "ArknightsCraft",
+    "advancements.arknightscraft.root.description" : "The beginning of this mod",
     "itemGroup.arknightscraft.arknightscraftitemgroup" : "ArknightsCraft",
+    "item.arknightscraft.eureka_medal.tooltip" : "Here is Eureka~",
+    "item.arknightscraft.eureka_medal" : "Medal of Eureka",
     "item.arknightscraft.orirock" : "Orirock",
     "block.arknightscraft.orirock_cube" : "Orirock Cube"
 }

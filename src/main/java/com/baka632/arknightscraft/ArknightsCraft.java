@@ -1,5 +1,7 @@
 package com.baka632.arknightscraft;
 
+import com.baka632.arknightscraft.items.eggs.EurekaMedal;
+
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
@@ -24,6 +26,9 @@ public class ArknightsCraft implements ModInitializer {
 	public static final String MODID = "arknightscraft";
 	public static final ItemGroup ARKNIGHTSCRAFT_ITEM_GROUP = FabricItemGroupBuilder.build(new Identifier(MODID, "arknightscraftitemgroup"), () -> new ItemStack(ArknightsCraft.ORIROCK));
 
+	//Egg item
+	public static final EurekaMedal EUREKA_MEDAL = new EurekaMedal(new Item.Settings());
+
 	//Materials item
 	public static final Item ORIROCK = new Item(new FabricItemSettings().group(ArknightsCraft.ARKNIGHTSCRAFT_ITEM_GROUP));
 
@@ -43,6 +48,9 @@ public class ArknightsCraft implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+		//Register egg items
+		Registry.register(Registry.ITEM, new Identifier(MODID,"eureka_medal"), EUREKA_MEDAL);
+
 		//Register blocks
 		Registry.register(Registry.BLOCK, new Identifier(MODID,"orirock_cube"), ORIROCK_CUBE);
 		

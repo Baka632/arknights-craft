@@ -1,5 +1,9 @@
 {
+    "advancements.arknightscraft.root.title" : "ArknightsCraft",
+    "advancements.arknightscraft.root.description" : "一切的开始",
     "itemGroup.arknightscraft.arknightscraftitemgroup" : "ArknightsCraft",
+    "item.arknightscraft.eureka_medal.tooltip" : "这里是尤里卡~",
+    "item.arknightscraft.eureka_medal" : "尤里卡蚀刻章",
     "item.arknightscraft.orirock" : "源岩",
     "block.arknightscraft.orirock_cube" : "固源岩"
 }
