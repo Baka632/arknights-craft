@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "FF",
+      "FF"
+    ],
+    "key": {
+      "F": {
+        "item": "arknightscraft:orirock"
+      }
+    },
+    "result": {
+      "item": "arknightscraft:orirock_cube"
+    }
+}
