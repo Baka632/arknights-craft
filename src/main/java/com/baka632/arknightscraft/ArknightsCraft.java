@@ -1,5 +1,8 @@
 package com.baka632.arknightscraft;
 
+import java.util.Calendar;
+import java.util.Date;
+
 import com.baka632.arknightscraft.items.eggs.EurekaMedal;
 
 import net.fabricmc.api.ModInitializer;
@@ -49,6 +52,14 @@ public class ArknightsCraft implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+		System.out.println("[ArknightsCraft]欢迎游玩ArknightsCraft!\t作者:Baka632");
+		Calendar todayCalender = Calendar.getInstance();
+		if ((todayCalender.get(Calendar.MONTH) == Calendar.MAY && todayCalender.get(Calendar.DATE) == 1) || (todayCalender.get(Calendar.MONTH) == Calendar.APRIL && todayCalender.get(Calendar.DATE) == 30)) {
+			System.out.println("[ArknightsCraft]Happy birthday,Arknights!");
+		}
+		else if(todayCalender.get(Calendar.MONTH) == Calendar.MARCH && todayCalender.get(Calendar.DATE) == 14){
+			System.out.println("[ArknightsCraft]I miss you,AcademyCraft...");
+		}
 		//Register egg items
 		Registry.register(Registry.ITEM, new Identifier(MODID,"eureka_medal"), EUREKA_MEDAL);
 
