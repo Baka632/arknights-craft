@@ -14,6 +14,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.Rarity;
 import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.gen.decorator.Decorator;
@@ -27,7 +28,7 @@ public class ArknightsCraft implements ModInitializer {
 	public static final ItemGroup ARKNIGHTSCRAFT_ITEM_GROUP = FabricItemGroupBuilder.build(new Identifier(MODID, "arknightscraftitemgroup"), () -> new ItemStack(ArknightsCraft.ORIROCK));
 
 	//Egg item
-	public static final EurekaMedal EUREKA_MEDAL = new EurekaMedal(new Item.Settings());
+	public static final EurekaMedal EUREKA_MEDAL = new EurekaMedal(new Item.Settings().maxCount(1).rarity(Rarity.EPIC));
 
 	//Materials item
 	public static final Item ORIROCK = new Item(new FabricItemSettings().group(ArknightsCraft.ARKNIGHTSCRAFT_ITEM_GROUP));
@@ -42,7 +43,7 @@ public class ArknightsCraft implements ModInitializer {
 			ArknightsCraft.ORIROCK_CUBE.getDefaultState(),
 			9))
 		.decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(
-			0, 0, 64)))
+			40, 0, 64)))
 		.spreadHorizontally()
 		.repeat(16);
 

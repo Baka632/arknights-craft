@@ -1,6 +1,8 @@
 {
     "advancements.arknightscraft.root.title" : "ArknightsCraft",
     "advancements.arknightscraft.root.description" : "一切的开始",
+    "advancements.arknightscraft.eureka_medal.title" : "尤里卡",
+    "advancements.arknightscraft.eureka_medal.description" : "获得“尤里卡蚀刻章”",
     "itemGroup.arknightscraft.arknightscraftitemgroup" : "ArknightsCraft",
     "item.arknightscraft.eureka_medal.tooltip" : "这里是尤里卡~",
     "item.arknightscraft.eureka_medal" : "尤里卡蚀刻章",

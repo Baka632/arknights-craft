@@ -1,0 +1,33 @@
+{
+    "criteria": {
+        "get_eureka_medal": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "arknightscraft:eureka_medal"
+                    }
+                ]
+            }
+        }
+    },
+    "display": {
+        "icon": {
+            "item": "arknightscraft:eureka_medal"
+        },
+        "title": {
+            "translate": "advancements.arknightscraft.eureka_medal.title"
+        },
+        "frame": "challenge",
+        "description": {
+            "translate": "advancements.arknightscraft.eureka_medal.description"
+        },
+        "hidden": true
+    },
+    "requirements": [
+        [
+            "get_eureka_medal"
+        ]
+    ],
+    "parent": "arknightscraft:arknightscraft/root"
+}

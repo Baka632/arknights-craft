@@ -1,6 +1,8 @@
 {
     "advancements.arknightscraft.root.title" : "ArknightsCraft",
     "advancements.arknightscraft.root.description" : "The beginning of this mod",
+    "advancements.arknightscraft.eureka_medal.title" : "Eureka",
+    "advancements.arknightscraft.eureka_medal.description" : "Get item \"Medal of Eureka\"",
     "itemGroup.arknightscraft.arknightscraftitemgroup" : "ArknightsCraft",
     "item.arknightscraft.eureka_medal.tooltip" : "Here is Eureka~",
     "item.arknightscraft.eureka_medal" : "Medal of Eureka",
