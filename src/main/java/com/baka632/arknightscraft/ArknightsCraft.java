@@ -1,7 +1,6 @@
 package com.baka632.arknightscraft;
 
 import java.util.Calendar;
-import java.util.Date;
 
 import com.baka632.arknightscraft.items.eggs.EurekaMedal;
 
