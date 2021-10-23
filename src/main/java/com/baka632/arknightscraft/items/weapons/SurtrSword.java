@@ -1,7 +1,5 @@
 package com.baka632.arknightscraft.items.weapons;
 
-import net.minecraft.advancement.criterion.Criteria;
-import net.minecraft.entity.mob.EvokerEntity;
 import net.minecraft.entity.mob.EvokerFangsEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
