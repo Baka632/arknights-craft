@@ -4,8 +4,9 @@
     "advancements.arknightscraft.eureka_medal.title" : "尤里卡",
     "advancements.arknightscraft.eureka_medal.description" : "获得“尤里卡蚀刻章”",
     "itemGroup.arknightscraft.arknightscraftitemgroup" : "ArknightsCraft",
-    "item.arknightscraft.eureka_medal.tooltip" : "这里是尤里卡~",
     "item.arknightscraft.eureka_medal" : "尤里卡蚀刻章",
     "item.arknightscraft.orirock" : "源岩",
-    "block.arknightscraft.orirock_cube" : "固源岩"
+    "item.arknightscraft.surtr_sword" : "莱瓦汀",
+    "block.arknightscraft.orirock_cube" : "固源岩",
+    "effect.arknightscraft.oripathy" : "矿石病"
 }

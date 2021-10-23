@@ -2,13 +2,13 @@ package com.baka632.arknightscraft.items.eggs;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.stat.Stats;
 import net.minecraft.world.World;
-import net.minecraft.text.Text;
-import net.minecraft.text.TranslatableText;
-import net.minecraft.util.Formatting;
-
-import java.util.List;
-import net.minecraft.client.item.TooltipContext;
+import net.minecraft.util.Hand;
+import net.minecraft.util.TypedActionResult;
+import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
+import net.minecraft.entity.player.PlayerEntity;
 
 public class EurekaMedal extends Item {
 
@@ -17,7 +17,11 @@ public class EurekaMedal extends Item {
     }
 
     @Override
-    public void appendTooltip(ItemStack itemStack, World world, List<Text> tooltip, TooltipContext tooltipContext) {
-        tooltip.add(new TranslatableText("item.arknightscraft.eureka_medal.tooltip").formatted(Formatting.GRAY,Formatting.ITALIC));
-    }
+	public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
+		user.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 200, 2, true, false, true));
+        user.addStatusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE, 100, 1, true, false, true));
+        user.incrementStat(Stats.USED.getOrCreateStat(this));
+        user.getItemCooldownManager().set(this, 400);
+        return TypedActionResult.pass(user.getStackInHand(hand));
+	}
 }
