@@ -1,9 +1,11 @@
 package com.baka632.arknightscraft.items.weapons;
 
+import com.baka632.arknightscraft.ArknightsCraft;
+
+import net.minecraft.client.render.entity.model.EvokerFangsEntityModel;
 import net.minecraft.entity.mob.EvokerFangsEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.SwordItem;
 import net.minecraft.stat.Stats;
@@ -17,7 +19,7 @@ import net.minecraft.server.world.ServerWorld;
 
 public class SurtrSword extends SwordItem {
     public SurtrSword() {
-        super(ToolMaterials.NETHERITE, 10, -10.0F, (new Item.Settings()).group(ItemGroup.COMBAT));
+        super(ToolMaterials.NETHERITE, 5, 1.0F, (new Item.Settings()).group(ArknightsCraft.ARKNIGHTSCRAFT_ITEM_GROUP));
     }
 
     @Override
@@ -27,14 +29,17 @@ public class SurtrSword extends SwordItem {
         if (world instanceof ServerWorld) {
             BlockPos blockPos = user.getBlockPos();
             if (blockPos != null) {
-                EvokerFangsEntity evokerFangsEntity = new EvokerFangsEntity(world, user.getX(), user.getY(), user.getZ(), 5f, 1, user);
-                world.spawnEntity(evokerFangsEntity);
+                for (int i = 1; i < 8; i++) {
+                    EvokerFangsEntity evokerFangsEntityX = new EvokerFangsEntity(world, user.getX() + i, user.getY(), user.getZ(), 0, 1, user);
+                    world.spawnEntity(evokerFangsEntityX);
+                }
                 if (!user.abilities.creativeMode) {
                     itemStack.damage(1, null, (ServerPlayerEntity)user);
                 }
 
                 user.incrementStat(Stats.USED.getOrCreateStat(this));
                 user.swingHand(hand, true);
+                user.getItemCooldownManager().set(this, 17);
                 return TypedActionResult.success(itemStack);
             }
         }

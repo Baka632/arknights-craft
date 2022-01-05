@@ -1,0 +1,24 @@
+{
+    "type": "minecraft:chest",
+    "pools": [
+      {
+        "rolls": {
+          "min": 0.0,
+          "max": 1.0,
+          "type": "minecraft:uniform"
+        },
+        "entries": [
+          {
+            "weight" : 3,
+            "type": "minecraft:item",
+            "name": "arknightscraft:eureka_medal"
+          },
+          {
+            "weight" : 10,
+            "type": "minecraft:item",
+            "name": "arknightscraft:orirock"
+          }
+        ]
+      }
+    ]
+  } 

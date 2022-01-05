@@ -1,28 +1,28 @@
 package com.baka632.arknightscraft;
 
 import java.util.Calendar;
-
 import com.baka632.arknightscraft.effect.Oripathy;
+import com.baka632.arknightscraft.entity.MoltenFlameEntity;
+import com.baka632.arknightscraft.init.ModLootTable;
 import com.baka632.arknightscraft.items.eggs.EurekaMedal;
 import com.baka632.arknightscraft.items.weapons.SurtrSword;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.fabricmc.fabric.api.loot.v1.FabricLootPoolBuilder;
-import net.fabricmc.fabric.api.loot.v1.event.LootTableLoadingCallback;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.block.Block;
 import net.minecraft.block.Material;
+import net.minecraft.entity.EntityDimensions;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.SpawnGroup;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
-import net.minecraft.loot.LootTables;
-import net.minecraft.loot.UniformLootTableRange;
-import net.minecraft.loot.entry.ItemEntry;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 import net.minecraft.util.registry.BuiltinRegistries;
@@ -36,9 +36,6 @@ import net.minecraft.world.gen.feature.OreFeatureConfig;
 public class ArknightsCraft implements ModInitializer {
 	public static final String MODID = "arknightscraft";
 	public static final ItemGroup ARKNIGHTSCRAFT_ITEM_GROUP = FabricItemGroupBuilder.build(new Identifier(MODID, "arknightscraftitemgroup"), () -> new ItemStack(ArknightsCraft.ORIROCK));
-
-	//Loot table we want to modify
-	private static final Identifier BURIED_TREASURE_LOOT_TABLE_ID = LootTables.BURIED_TREASURE_CHEST;
 	
 	//Egg item
 	public static final EurekaMedal EUREKA_MEDAL = new EurekaMedal(new Item.Settings().maxCount(1).rarity(Rarity.EPIC));
@@ -66,6 +63,8 @@ public class ArknightsCraft implements ModInitializer {
 		.spreadHorizontally()
 		.repeat(16);
 
+	//Entity
+	
 	@Override
 	public void onInitialize() {
 		System.out.println("[ArknightsCraft]欢迎游玩ArknightsCraft!\t作者:Baka632");
@@ -96,14 +95,9 @@ public class ArknightsCraft implements ModInitializer {
 		//Register effects
 		Registry.register(Registry.STATUS_EFFECT, new Identifier(MODID, "oripathy"), ORIPATHY);
 
-		//Listen to loot table events
-		LootTableLoadingCallback.EVENT.register((resourceManager, lootManager, id, table, setter) -> {
-			if (BURIED_TREASURE_LOOT_TABLE_ID.equals(id)) {
-				FabricLootPoolBuilder poolBuilder = FabricLootPoolBuilder.builder()
-                .rolls(UniformLootTableRange.between(0.0f, 0.3f))
-                .with(ItemEntry.builder(EUREKA_MEDAL));
-        		table.pool(poolBuilder);
-			}
-		});
+		//Register entities
+
+
+		ModLootTable.init();
 	}
 }
