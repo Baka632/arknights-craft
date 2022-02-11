@@ -1,8 +1,8 @@
 package com.baka632.arknightscraft.items.weapons;
 
 import com.baka632.arknightscraft.ArknightsCraft;
+import com.baka632.arknightscraft.init.ModItems;
 
-import net.minecraft.client.render.entity.model.EvokerFangsEntityModel;
 import net.minecraft.entity.mob.EvokerFangsEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
@@ -19,7 +19,7 @@ import net.minecraft.server.world.ServerWorld;
 
 public class SurtrSword extends SwordItem {
     public SurtrSword() {
-        super(ToolMaterials.NETHERITE, 5, 1.0F, (new Item.Settings()).group(ArknightsCraft.ARKNIGHTSCRAFT_ITEM_GROUP));
+        super(ToolMaterials.NETHERITE, 5, 1.0F, (new Item.Settings()).group(ModItems.ARKNIGHTSCRAFT_ITEM_GROUP));
     }
 
     @Override
@@ -33,7 +33,7 @@ public class SurtrSword extends SwordItem {
                     EvokerFangsEntity evokerFangsEntityX = new EvokerFangsEntity(world, user.getX() + i, user.getY(), user.getZ(), 0, 1, user);
                     world.spawnEntity(evokerFangsEntityX);
                 }
-                if (!user.abilities.creativeMode) {
+                if (!user.getAbilities().creativeMode) {
                     itemStack.damage(1, null, (ServerPlayerEntity)user);
                 }
 

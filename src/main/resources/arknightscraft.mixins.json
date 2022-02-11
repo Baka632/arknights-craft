@@ -4,7 +4,7 @@
   "package": "com.baka632.arknightscraft.mixin",
   "compatibilityLevel": "JAVA_16",
   "client": [
-    "DefaultBiomeFeaturesMixin"
+    
   ],
   "injectors": {
     "defaultRequire": 1

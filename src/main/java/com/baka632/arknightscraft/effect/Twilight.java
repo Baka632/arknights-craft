@@ -1,12 +1,11 @@
-package com.baka632.arknightscraft.effect;
+// package com.baka632.arknightscraft.effect;
 
-import net.minecraft.entity.effect.StatusEffect;
-import net.minecraft.entity.effect.StatusEffectType;
+// import net.minecraft.entity.effect.StatusEffect;
 
-public class Twilight extends StatusEffect {
+// public class Twilight extends StatusEffect {
 
-    public Twilight() {
-        super(StatusEffectType.NEUTRAL, 986960);
-    }
+//     public Twilight() {
+//         super(StatusEffectType.NEUTRAL, 986960);
+//     }
     
-}
+// }
