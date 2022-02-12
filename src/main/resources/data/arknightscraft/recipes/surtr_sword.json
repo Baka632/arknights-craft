@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "FIF",
+    "INI",
+    "FNF"
+  ],
+  "key": {
+    "I": {
+      "item": "minecraft:stick"
+    },
+    "N": {
+      "item": "minecraft:iron_ingot"
+    },
+    "F":{
+      "item": "minecraft:magma_cream"
+    }
+  },
+  "result": {
+    "item": "arknightscraft:surtr_sword"
+  }
+}
