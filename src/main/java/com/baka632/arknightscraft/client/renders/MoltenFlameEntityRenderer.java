@@ -7,7 +7,6 @@ import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.entity.EntityRenderer;
 import net.minecraft.client.render.entity.EntityRendererFactory.Context;
 import net.minecraft.client.render.entity.model.EntityModelLayers;
-import net.minecraft.client.render.entity.model.EvokerFangsEntityModel;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.Vec3f;
@@ -28,8 +27,8 @@ public class MoltenFlameEntityRenderer extends EntityRenderer<MoltenFlameEntity>
     private final MoltenFlameEntityModel<MoltenFlameEntity> model;
 
     @Override
-    public void render(MoltenFlameEntity evokerFangsEntity, float f, float g, MatrixStack matrixStack, VertexConsumerProvider vertexConsumerProvider, int i) {
-        float h = evokerFangsEntity.getAnimationProgress(g);
+    public void render(MoltenFlameEntity moltenFlameEntity, float f, float g, MatrixStack matrixStack, VertexConsumerProvider vertexConsumerProvider, int i) {
+        float h = moltenFlameEntity.getAnimationProgress(g);
         if (h == 0.0f) {
             return;
         }
@@ -38,15 +37,15 @@ public class MoltenFlameEntityRenderer extends EntityRenderer<MoltenFlameEntity>
             j = (float)(j * ((1.0 - h) / 0.1f));
         }
         matrixStack.push();
-        matrixStack.multiply(Vec3f.POSITIVE_Y.getDegreesQuaternion(90.0f - evokerFangsEntity.getYaw()));
+        matrixStack.multiply(Vec3f.POSITIVE_Y.getDegreesQuaternion(90.0f - moltenFlameEntity.getYaw()));
         matrixStack.scale(-j, -j, j);
         matrixStack.translate(0.0, -0.626f, 0.0);
         matrixStack.scale(0.5f, 0.5f, 0.5f);
-        this.model.setAngles(evokerFangsEntity, h, 0.0f, 0.0f, evokerFangsEntity.getYaw(), evokerFangsEntity.getPitch());
+        this.model.setAngles(moltenFlameEntity, h, 0.0f, 0.0f, moltenFlameEntity.getYaw(), moltenFlameEntity.getPitch());
         VertexConsumer vertexConsumer = vertexConsumerProvider.getBuffer(this.model.getLayer(TEXTURE));
         this.model.render(matrixStack, vertexConsumer, i, OverlayTexture.DEFAULT_UV, 1.0f, 1.0f, 1.0f, 1.0f);
         matrixStack.pop();
-        super.render(evokerFangsEntity, f, g, matrixStack, vertexConsumerProvider, i);
+        super.render(moltenFlameEntity, f, g, matrixStack, vertexConsumerProvider, i);
     }
 
     @Override

@@ -35,7 +35,7 @@ public class SurtrSword extends SwordItem {
         ItemStack itemStack = user.getStackInHand(hand);
         if (world instanceof ServerWorld) {
             BlockPos blockPos = user.getBlockPos();
-            if (blockPos != null) {
+            if (blockPos != null && user.isOnGround()) {
                 startAttack(world,user);
                 if (!user.getAbilities().creativeMode) {
                     itemStack.damage(1, null, (ServerPlayerEntity)user);

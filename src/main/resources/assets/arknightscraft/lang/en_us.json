@@ -9,5 +9,6 @@
     "item.arknightscraft.surtr_sword" : "Laevatain",
     "item.arknightscraft.angelina_staff" : "Angelina's Staff",
     "block.arknightscraft.orirock_cube" : "Orirock Cube",
-    "effect.arknightscraft.oripathy" : "Oripathy"
+    "effect.arknightscraft.oripathy" : "Oripathy",
+    "entity.arknightscraft.angelina_staff_entity" : "Angelina's Staff"
 }

@@ -82,16 +82,18 @@ public class MoltenFlameEntity extends Entity {
         if (!target.isAlive() || target.isInvulnerable() || target == livingEntity) {
             return;
         }
+
+        target.setOnFire(true);
+        target.setOnFireFor(5);
+
         if (livingEntity == null) {
             target.damage(DamageSource.MAGIC, 6.0f);
         } else {
             if (livingEntity.isTeammate(target)) {
                 return;
             }
-            target.damage(DamageSource.magic(this, livingEntity), 6.0f);
+            target.damage(DamageSource.mob(livingEntity), 12.0f);
         }
-        target.setOnFire(true);
-        target.setOnFireFor(5);
     }
 
     @Override

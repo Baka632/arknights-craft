@@ -2,6 +2,8 @@ package com.baka632.arknightscraft.items.weapons;
 
 import java.util.List;
 
+import com.baka632.arknightscraft.entity.AngelinaStaffEntity;
+
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityGroup;
 import net.minecraft.entity.LivingEntity;
@@ -15,9 +17,11 @@ import net.minecraft.entity.passive.TameableEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.stat.Stats;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
+import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
 
 public class AngelinaStaff extends Item {
@@ -37,6 +41,22 @@ public class AngelinaStaff extends Item {
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         ItemStack itemStack = user.getStackInHand(hand);
         if (!world.isClient) {
+            if (user.isSneaking() && user.isOnGround()){
+                AngelinaStaffEntity staffEntity = new AngelinaStaffEntity(world);
+                staffEntity.setPosition(user.getX() + 0.5, user.getY(), user.getZ() + 0.5);
+                
+                if (itemStack.hasCustomName()) {
+                    staffEntity.setCustomName(itemStack.getName());
+                }
+                
+                if (!world.isClient) {
+                    world.spawnEntity(staffEntity);
+                }
+                staffEntity.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0f, 1.0f);
+                itemStack.decrement(1);
+                return TypedActionResult.consume(itemStack);
+            }
+
             List<LivingEntity> list = 
                 world.getTargets(LivingEntity.class, this.convertibleLivingEntityPredicate, user, user.getBoundingBox().expand(16.0, 4.0, 16.0));
             if (list.isEmpty()) {
