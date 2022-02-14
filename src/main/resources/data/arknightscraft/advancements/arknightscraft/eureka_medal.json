@@ -1,14 +1,14 @@
 {
     "criteria": {
         "get_eureka_medal": {
-            "trigger": "minecraft:inventory_changed",
-            "conditions": {
-                "items": [
-                    {
-                        "item": "arknightscraft:eureka_medal"
-                    }
-                ]
-            }
+          "trigger": "minecraft:inventory_changed",
+          "conditions": {
+            "items": [
+              {
+                "items": ["arknightscraft:eureka_medal"]
+              }
+            ]
+          }
         }
     },
     "display": {

@@ -53,7 +53,7 @@ public class SurtrSword extends SwordItem {
     private void startAttack(World world,PlayerEntity player) {
         float yaw = player.getYaw();
         Vec3d pos = player.getPos().add(0,player.getEyeHeight(player.getPose()),0);
-        Vec3d yawPos = pos.multiply(Math.cos(yaw));
+        Vec3d yawPos = pos.multiply(-yaw);
 
         double d = Math.min(yawPos.getY(), player.getY());
         double e = Math.max(yawPos.getY(), player.getY()) + 1.0;

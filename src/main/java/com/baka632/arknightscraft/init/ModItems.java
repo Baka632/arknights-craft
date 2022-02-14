@@ -2,6 +2,7 @@ package com.baka632.arknightscraft.init;
 
 import com.baka632.arknightscraft.ArknightsCraft;
 import com.baka632.arknightscraft.items.eggs.EurekaMedal;
+import com.baka632.arknightscraft.items.weapons.AngelinaStaff;
 import com.baka632.arknightscraft.items.weapons.SurtrSword;
 
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
@@ -26,6 +27,8 @@ public class ModItems {
 
     public static final Item SURTR_SWORD = new SurtrSword();
 
+    public static final Item ANGELINA_STAFF = new AngelinaStaff(new FabricItemSettings().group(ARKNIGHTSCRAFT_ITEM_GROUP).maxCount(1).rarity(Rarity.RARE));
+
     public static void init(){
         Registry.register(Registry.ITEM, new Identifier(ArknightsCraft.MODID, "mod_icon"), MOD_ICON_ITEM);
 
@@ -38,6 +41,7 @@ public class ModItems {
 
 		//Register weapons item
 		Registry.register(Registry.ITEM, new Identifier(ArknightsCraft.MODID,"surtr_sword"), SURTR_SWORD);
+        Registry.register(Registry.ITEM, new Identifier(ArknightsCraft.MODID,"angelina_staff"), ANGELINA_STAFF);
     }
 
     private ModItems(){

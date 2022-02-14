@@ -1,6 +1,6 @@
 {
     "parent": "item/handheld",
     "textures": {
-      "layer0": "arknightscraft:item/surtr_sword"
+      "layer0": "arknightscraft:item/angelina_staff"
     }
 }

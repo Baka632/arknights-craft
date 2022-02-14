@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "NNN",
+      "III",
+      " I "
+    ],
+    "key": {
+      "I": {
+        "item": "minecraft:stick"
+      },
+      "N": {
+        "item": "minecraft:torch"
+      }
+    },
+    "result": {
+      "item": "arknightscraft:angelina_staff"
+    }
+  }
