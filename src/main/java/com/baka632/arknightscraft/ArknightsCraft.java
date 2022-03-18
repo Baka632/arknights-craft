@@ -10,6 +10,7 @@ import com.baka632.arknightscraft.init.ModItems;
 import com.baka632.arknightscraft.init.ModLootTable;
 
 import net.fabricmc.api.ModInitializer;
+import net.minecraft.util.Identifier;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -17,6 +18,8 @@ import org.apache.logging.log4j.Logger;
 public class ArknightsCraft implements ModInitializer {
 	public static final String MODID = "arknightscraft";
 	public static final Logger LOGGER = LogManager.getLogger("ArknightsCraft");
+	public static final Identifier GET_KEY_STATE_PACK_ID = new Identifier(ArknightsCraft.MODID,"get_key_state");
+    public static final Identifier SEND_KEY_STATE_PACK_ID = new Identifier(ArknightsCraft.MODID,"sent_key_state");
 	
 	//Effects
 	//public static final StatusEffect ORIPATHY = new Oripathy();

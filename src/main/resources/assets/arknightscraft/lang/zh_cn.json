@@ -10,5 +10,10 @@
     "item.arknightscraft.angelina_staff" : "安洁莉娜的法杖",
     "block.arknightscraft.orirock_cube" : "固源岩",
     "effect.arknightscraft.oripathy" : "矿石病",
-    "entity.arknightscraft.angelina_staff_entity" : "安洁莉娜的法杖"
+    "entity.arknightscraft.angelina_staff_entity" : "安洁莉娜的法杖",
+    "category.arknightscraft.category" : "Arknights Craft",
+    "key.arknightscraft.leftKey" : "向左移动法杖",
+    "key.arknightscraft.rightKey" : "向右移动法杖",
+    "key.arknightscraft.forwardKey" : "向前移动法杖",
+    "key.arknightscraft.backKey" : "向后移动法杖"
 }
